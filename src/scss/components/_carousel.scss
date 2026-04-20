@@ -1,0 +1,174 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.carousel-section {
+  background: $color-bg;
+  padding: $space-xl 0;
+  overflow: hidden;
+
+  .section__header {
+    padding: 0 $space-md;
+    margin-bottom: $space-lg;
+  }
+}
+
+.carousel {
+  position: relative;
+
+  &__track-wrap {
+    overflow: hidden;
+    position: relative;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(90deg, $color-bg, transparent);
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(270deg, $color-bg, transparent);
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  &__slide {
+    flex: 0 0 320px;
+    position: relative;
+    background: $color-surface;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform $transition-base;
+
+    @include respond-to(md) { flex: 0 0 380px; }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba($color-yellow, 0);
+      transition: border-color $transition-base;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      &::before { border-color: rgba($color-yellow, 0.4); }
+      .carousel__slide-img { transform: scale(1.05); }
+      .carousel__slide-overlay { opacity: 1; }
+    }
+  }
+
+  &__slide-img-wrap {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
+  &__slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-slow;
+  }
+
+  &__slide-overlay {
+    @include absolute-fill;
+    background: linear-gradient(0deg, rgba($color-bg, 0.9) 0%, transparent 60%);
+    opacity: 0.6;
+    transition: opacity $transition-base;
+    z-index: 1;
+  }
+
+  &__slide-info {
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__slide-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: $color-yellow;
+    margin-bottom: 0.5rem;
+    font-family: $font-mono;
+  }
+
+  &__slide-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    color: $color-white;
+    line-height: 1.2;
+  }
+
+  &__slide-desc {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: $color-gray-light;
+  }
+
+  &__controls {
+    @include flex-center;
+    gap: 1.5rem;
+    margin-top: $space-md;
+  }
+
+  &__btn {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba($color-yellow, 0.3);
+    color: $color-yellow;
+    @include flex-center;
+    transition: all $transition-fast;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+    font-size: 1.2rem;
+
+    &:hover {
+      background: $color-yellow;
+      color: $color-bg;
+      border-color: $color-yellow;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    background: rgba($color-white, 0.2);
+    transition: all $transition-base;
+    clip-path: polygon(2px 0%, 100% 0%, calc(100% - 2px) 100%, 0% 100%);
+
+    &.active {
+      width: 24px;
+      background: $color-yellow;
+      box-shadow: $shadow-glow-yellow;
+    }
+  }
+}

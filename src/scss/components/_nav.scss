@@ -1,0 +1,82 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem $space-md;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background $transition-base, padding $transition-base;
+
+  &.scrolled {
+    background: rgba($color-bg, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 0.75rem $space-md;
+    border-bottom: 1px solid rgba($color-yellow, 0.1);
+  }
+
+  &__logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-yellow;
+    letter-spacing: 0.05em;
+
+    span { color: $color-white; }
+  }
+
+  &__links {
+    display: none;
+
+    @include respond-to(md) {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    a {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba($color-white, 0.7);
+      transition: color $transition-fast;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0; right: 0;
+        height: 1px;
+        background: $color-yellow;
+        transform: scaleX(0);
+        transition: transform $transition-fast;
+        transform-origin: left;
+      }
+
+      &:hover { color: $color-white; }
+      &:hover::after { transform: scaleX(1); }
+    }
+  }
+
+  &__cta {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.4rem;
+    background: $color-yellow;
+    color: $color-bg;
+    font-weight: 700;
+    font-family: $font-body;
+    transition: all $transition-fast;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+
+    &:hover {
+      background: $color-white;
+      transform: translateY(-1px);
+    }
+  }
+}

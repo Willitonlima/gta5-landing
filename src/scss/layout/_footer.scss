@@ -1,0 +1,102 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+  background: $color-surface;
+  padding: $space-lg $space-md $space-md;
+  border-top: 1px solid rgba($color-yellow, 0.15);
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: $space-md;
+
+    @include respond-to(md) {
+      grid-template-columns: 2fr 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  &__brand {
+    .brand-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $color-yellow;
+      line-height: 1;
+
+      span { color: $color-white; }
+    }
+
+    p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      max-width: 300px;
+    }
+
+    &-rating {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      img { height: 40px; }
+
+      span {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        color: $color-gray-light;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__links {
+    h5 {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.15em;
+      color: $color-yellow;
+      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+    }
+
+    li + li { margin-top: 0.75rem; }
+
+    a {
+      color: $color-gray-light;
+      font-size: 0.9rem;
+      transition: color $transition-fast;
+
+      &:hover { color: $color-yellow; }
+    }
+  }
+
+  &__bottom {
+    margin-top: $space-md;
+    padding-top: $space-sm;
+    border-top: 1px solid rgba($color-white, 0.06);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-size: 0.75rem;
+      color: $color-gray;
+    }
+
+    &-links {
+      display: flex;
+      gap: 1.5rem;
+
+      a {
+        font-size: 0.75rem;
+        color: $color-gray;
+        transition: color $transition-fast;
+        &:hover { color: $color-yellow; }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@use 'variables' as *;
+
+@mixin respond-to($bp) {
+  @if $bp == sm  { @media (min-width: $bp-sm)  { @content; } }
+  @if $bp == md  { @media (min-width: $bp-md)  { @content; } }
+  @if $bp == lg  { @media (min-width: $bp-lg)  { @content; } }
+  @if $bp == xl  { @media (min-width: $bp-xl)  { @content; } }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin absolute-fill {
+  position: absolute;
+  inset: 0;
+}
+
+@mixin gta-border($color: $color-yellow) {
+  border: 2px solid $color;
+  box-shadow: 0 0 12px rgba($color, 0.3), inset 0 0 12px rgba($color, 0.05);
+}
+
+@mixin text-glow($color: $color-yellow) {
+  text-shadow: 0 0 20px rgba($color, 0.8), 0 0 60px rgba($color, 0.4), 0 0 100px rgba($color, 0.2);
+}
+
+@mixin scanlines {
+  &::after {
+    content: '';
+    @include absolute-fill;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.08) 2px,
+      rgba(0,0,0,0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 10;
+  }
+}
+
+@mixin noise-overlay {
+  &::before {
+    content: '';
+    @include absolute-fill;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1;
+  }
+}

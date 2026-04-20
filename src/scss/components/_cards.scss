@@ -1,0 +1,88 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.character-card {
+  position: relative;
+  overflow: hidden;
+  background: $color-surface;
+  cursor: pointer;
+  transition: transform $transition-base;
+
+  &:hover {
+    transform: translateY(-6px);
+
+    .character-card__img { transform: scale(1.04); filter: grayscale(0); }
+    .character-card__glow { opacity: 1; }
+    .character-card__info { background: rgba($color-bg, 0.95); }
+  }
+
+  &__img-wrap {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: all $transition-slow;
+    filter: grayscale(30%);
+  }
+
+  &__glow {
+    @include absolute-fill;
+    opacity: 0;
+    transition: opacity $transition-base;
+    pointer-events: none;
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(0deg, rgba($color-bg, 0.95) 0%, transparent 100%);
+    transition: background $transition-base;
+  }
+
+  &__name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    color: $color-white;
+  }
+
+  &__role {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  &__bio {
+    font-size: 0.85rem;
+    color: rgba($color-white, 0.7);
+    margin-top: 0.75rem;
+    line-height: 1.5;
+  }
+
+  &--michael {
+    .character-card__role { color: #4a90e2; }
+    .character-card__glow { background: linear-gradient(0deg, rgba(74,144,226,0.15), transparent); }
+    &:hover .character-card__name { text-shadow: 0 0 20px rgba(74,144,226,0.5); }
+  }
+  &--trevor {
+    .character-card__role { color: $color-red; }
+    .character-card__glow { background: linear-gradient(0deg, rgba($color-red, 0.15), transparent); }
+    &:hover .character-card__name { text-shadow: 0 0 20px rgba($color-red, 0.5); }
+  }
+  &--franklin {
+    .character-card__role { color: $color-green; }
+    .character-card__glow { background: linear-gradient(0deg, rgba($color-green, 0.15), transparent); }
+    &:hover .character-card__name { text-shadow: 0 0 20px rgba($color-green, 0.5); }
+  }
+}

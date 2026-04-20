@@ -1,0 +1,44 @@
+@use '../abstracts/variables' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Oswald:wght@200;400;600;700&display=swap');
+
+.font-display  { font-family: $font-display; }
+.font-body     { font-family: $font-body; }
+
+h1, h2, h3, h4, h5 {
+  font-family: $font-body;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+p {
+  line-height: 1.7;
+  color: $color-gray-light;
+}
+
+.section-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-white;
+  position: relative;
+  display: inline-block;
+
+  span {
+    color: $color-yellow;
+  }
+}
+
+.section-label {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: $color-yellow;
+  margin-bottom: 1rem;
+  display: block;
+}

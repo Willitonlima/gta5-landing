@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTA V — Los Santos</title>
+  <meta name="description" content="Grand Theft Auto V — Entre no mundo de Los Santos" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Oswald:wght@200;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dist/css/main.min.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo">GTA<span>V</span></a>
+    <ul class="nav__links">
+      <li><a href="#about">O Jogo</a></li>
+      <li><a href="#characters">Personagens</a></li>
+      <li><a href="#gallery">Galeria</a></li>
+      <li><a href="#world">Mundo</a></li>
+    </ul>
+  </nav>
+
+  <header class="header" id="home">
+    <div class="header__bg"></div>
+    <div class="header__city"></div>
+    <div class="header__grid"></div>
+
+    <div class="header__content">
+      <span class="header__eyebrow">Rockstar Games Apresenta</span>
+
+      <div class="header__image-wrap">
+        <img
+          class="header__hero-img"
+          src="https://s2-techtudo.glbimg.com/Dx-d7zd6abaVIdY1QqGVKl_QvJ4=/0x0:620x349/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/s/i/R6L1HDR3GxheHSo2ECLQ/2013-10-11-grand-theft-auto-5-gta-finais.jpg"
+          alt="GTA V Logo"
+          onerror="this.src='https://placehold.co/500x300/0a0a0a/f7c948?text=GTA+V'"
+        />
+      </div>
+
+      <h1 class="header__title">
+        <span class="title-outline">Grand Theft</span>
+        Auto
+        <span class="title-number" style="color: rgb(63, 157, 63);">V</span>
+      </h1>
+
+      <p class="header__subtitle">Los Santos — Uma cidade de oportunidades infinitas</p>
+
+      <div class="header__cta-group">
+        <a href="#" class="btn btn--primary"><span>▶ Jogar Agora</span></a>
+        <a href="#about" class="btn btn--outline"><span>Explorar</span></a>
+      </div>
+    </div>
+
+    <div class="header__scroll">
+      <span>Scroll</span>
+      <div class="header__scroll-arrow"></div>
+    </div>
+  </header>
+
+  <section class="section about" id="about">
+    <div class="about__inner">
+      <div class="about__text reveal">
+        <span class="section-label">// O Jogo</span>
+        <h2 class="section-title">Bem-vindo a <span>Los Santos</span></h2>
+        <p>Grand Theft Auto V leva você ao coração de Los Santos, uma metrópole ensolarada lutando para sobreviver em uma era de segurança financeira e pop culture de auto-ajuda.</p>
+        <p>Três protagonistas únicos. Uma história entrelaçada de ambição, traição e sobrevivência no submundo criminal da Califórnia fictícia.</p>
+        <a href="#" class="btn btn--outline" style="margin-top:2rem"><span>Ver Trailer</span></a>
+      </div>
+      <div class="about__stats reveal">
+        <div class="about__stat">
+          <strong>170M+</strong>
+          <span>Cópias Vendidas</span>
+        </div>
+        <div class="about__stat">
+          <strong>3</strong>
+          <span>Protagonistas</span>
+        </div>
+        <div class="about__stat">
+          <strong>49km²</strong>
+          <span>Mapa Aberto</span>
+        </div>
+        <div class="about__stat">
+          <strong>10+</strong>
+          <span>Anos Online</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section characters" id="characters">
+    <div class="section__header reveal">
+      <div class="section__divider"><span>Protagonistas</span></div>
+      <h2 class="section-title">Os <span>Três</span></h2>
+    </div>
+
+    <div class="characters__grid">
+
+      <div class="character-card character-card--michael reveal">
+        <div class="character-card__img-wrap">
+          <img class="character-card__img"
+            src="https://static.wikia.nocookie.net/liberproeliis/images/2/2f/Michael_de_Santa.jpeg/revision/latest?cb=20260213050823&path-prefix=pt-br"
+            alt="Michael De Santa"
+            onerror="this.src='https://placehold.co/400x550/111/4a90e2?text=Michael'"
+          />
+        </div>
+        <div class="character-card__glow"></div>
+        <div class="character-card__info">
+          <h3 class="character-card__name">Michael</h3>
+          <span class="character-card__role">De Santa — Ex-Ladrão de Banco</span>
+          <p class="character-card__bio">Um criminoso aposentado vivendo em proteção testemunhal com uma família disfuncional e uma vida vazia. Mas o crime nunca larga quem o abraçou.</p>
+        </div>
+      </div>
+
+      <div class="character-card character-card--trevor reveal">
+        <div class="character-card__img-wrap">
+          <img class="character-card__img"
+            src="https://static.wikia.nocookie.net/viloes/images/9/92/Trevor_Philips.webp/revision/latest?cb=20250117153819&path-prefix=pt-br"
+            alt="Trevor Philips"
+            onerror="this.src='https://placehold.co/400x550/111/c0392b?text=Trevor'"
+          />
+        </div>
+        <div class="character-card__glow"></div>
+        <div class="character-card__info">
+          <h3 class="character-card__name">Trevor</h3>
+          <span class="character-card__role">Philips — Caos Ambulante</span>
+          <p class="character-card__bio">Violento, imprevisível e completamente sem filtros. Trevor é a encarnação do submundo criminal — e ele não pede desculpa por isso.</p>
+        </div>
+      </div>
+
+      <div class="character-card character-card--franklin reveal">
+        <div class="character-card__img-wrap">
+          <img class="character-card__img"
+            src="https://i.pinimg.com/736x/23/12/31/23123137d10181dcf1f6147243a26854.jpg"
+            alt="Franklin Clinton"
+            onerror="this.src='https://placehold.co/400x550/111/27ae60?text=Franklin'"
+          />
+        </div>
+        <div class="character-card__glow"></div>
+        <div class="character-card__info">
+          <h3 class="character-card__name">Franklin</h3>
+          <span class="character-card__role">Clinton — A Ascensão</span>
+          <p class="character-card__bio">Jovem das ruas de South LS buscando mais do que o bairro pode oferecer. Ambicioso, leal e disposto a tudo para chegar ao topo.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section gallery" id="gallery">
+    <div class="section__header reveal">
+      <div class="section__divider"><span>Screenshots</span></div>
+      <h2 class="section-title">Los Santos <span>em Foco</span></h2>
+    </div>
+
+    <div class="gallery__grid">
+      <div class="gallery__item reveal">
+        <img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2020/05/GTA-V-Los-Santos.jpg" alt="City panorama" />
+        <span class="gallery__label">Panorama de Los Santos</span>
+      </div>
+      <div class="gallery__item reveal">
+        <img src="https://static.wikia.nocookie.net/gta/images/3/32/Racing-GTAO.jpg/revision/latest?cb=20200509013335&path-prefix=pt" alt="Sports car" />
+        <span class="gallery__label">Velocidade nas ruas</span>
+      </div>
+      <div class="gallery__item reveal">
+        <img src="https://assetsio.gnwcdn.com/gta-v-naturalvision-e.jpeg?width=1200&height=600&fit=crop&enable=upscale&auto=webp" alt="Nightlife" />
+        <span class="gallery__label">A noite de LS</span>
+      </div>
+      <div class="gallery__item reveal">
+        <img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/grand-theft-auto-5/f/fb/Gta-general-02jpg-5a7de0.jpg" alt="Urban street" />
+        <span class="gallery__label">Ruas da cidade</span>
+      </div>
+      <div class="gallery__item reveal">
+        <img src="https://static.wikia.nocookie.net/gta/images/1/1e/GrandSenoraDesertOverview-GTAV.jpg/revision/latest?cb=20170322171354&path-prefix=pt" alt="Desert highway" />
+        <span class="gallery__label">Estrada do deserto</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section world" id="world">
+    <div class="world__inner">
+      <div class="section__header reveal">
+        <div class="section__divider"><span>Gameplay</span></div>
+        <h2 class="section-title">Um <span>Mundo</span> Vivo</h2>
+      </div>
+
+      <div class="world__features">
+        <div class="world__feature reveal">
+          <div class="world__feature-icon">🏙️</div>
+          <h4>Mundo Aberto</h4>
+          <p>Explore Los Santos e Blaine County livremente — do centro à montanha, do deserto ao oceano.</p>
+        </div>
+        <div class="world__feature reveal">
+          <div class="world__feature-icon">🎯</div>
+          <h4>Missões Épicas</h4>
+          <p>Roubos cinematográficos, perseguições de alta velocidade e traições inesperadas em cada missão.</p>
+        </div>
+        <div class="world__feature reveal">
+          <div class="world__feature-icon">🌐</div>
+          <h4>GTA Online</h4>
+          <p>Construa seu império criminal com amigos. Roubos, corridas e guerras de facção sem fim.</p>
+        </div>
+        <div class="world__feature reveal">
+          <div class="world__feature-icon">🎮</div>
+          <h4>Customização</h4>
+          <p>Personalize carros, armas, roupas e sua vida criminal do seu jeito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="carousel-section" id="carousel">
+    <div class="section__header reveal">
+      <div class="section__divider"><span>Destaque</span></div>
+      <h2 class="section-title">Momentos <span>Épicos</span></h2>
+    </div>
+
+    <div class="carousel">
+      <div class="carousel__track-wrap">
+        <div class="carousel__track">
+
+          <div class="carousel__slide">
+            <div class="carousel__slide-img-wrap">
+              <img class="carousel__slide-img"
+                src="https://assetsio.gnwcdn.com/gta-5-the-big-score-header.jpg?width=1600&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp"
+                alt="Heist"
+                onerror="this.src='https://placehold.co/380x214/111/f7c948?text=Heist'"
+              />
+            </div>
+            <div class="carousel__slide-overlay"></div>
+            <div class="carousel__slide-info">
+              <div class="carousel__slide-tag">// Missão Principal</div>
+              <h3 class="carousel__slide-title">The Big Score</h3>
+              <p class="carousel__slide-desc">O maior assalto da história de Los Santos. Tudo ou nada.</p>
+            </div>
+          </div>
+
+          <div class="carousel__slide">
+            <div class="carousel__slide-img-wrap">
+              <img class="carousel__slide-img"
+                src="https://media.rockstargames.com/rockstargames-newsite/uploads/69168b73237cb49bc84a761c62cb48357d6d293d.jpg"
+                alt="Racing"
+                onerror="this.src='https://placehold.co/380x214/111/f7c948?text=Racing'"
+              />
+            </div>
+            <div class="carousel__slide-overlay"></div>
+            <div class="carousel__slide-info">
+              <div class="carousel__slide-tag">// GTA Online</div>
+              <h3 class="carousel__slide-title">Street Racing</h3>
+              <p class="carousel__slide-desc">Velocidade máxima pelas ruas iluminadas de Los Santos.</p>
+            </div>
+          </div>
+
+          <div class="carousel__slide">
+            <div class="carousel__slide-img-wrap">
+              <img class="carousel__slide-img"
+                src="https://static.wikia.nocookie.net/gta/images/1/13/Nightclubs-GTAO-HeaderOverview.png/revision/latest?cb=20180829144642&path-prefix=pt"
+                alt="Night City"
+                onerror="this.src='https://placehold.co/380x214/111/f7c948?text=Night+City'"
+              />
+            </div>
+            <div class="carousel__slide-overlay"></div>
+            <div class="carousel__slide-info">
+              <div class="carousel__slide-tag">// Exploração</div>
+              <h3 class="carousel__slide-title">Vida Noturna</h3>
+              <p class="carousel__slide-desc">A cidade nunca dorme. E nem os criminosos.</p>
+            </div>
+          </div>
+
+          <div class="carousel__slide">
+            <div class="carousel__slide-img-wrap">
+              <img class="carousel__slide-img"
+                src="https://img.gta5-mods.com/q95/images/delete-american-on-north/5a0bd4-Screenshot_3.jpg"
+                alt="Mountains"
+                onerror="this.src='https://placehold.co/380x214/111/f7c948?text=Blaine+County'"
+              />
+            </div>
+            <div class="carousel__slide-overlay"></div>
+            <div class="carousel__slide-info">
+              <div class="carousel__slide-tag">// Mundo Aberto</div>
+              <h3 class="carousel__slide-title">Blaine County</h3>
+              <p class="carousel__slide-desc">O deserto, as montanhas e a loucura de Trevor Philips.</p>
+            </div>
+          </div>
+
+          <div class="carousel__slide">
+            <div class="carousel__slide-img-wrap">
+              <img class="carousel__slide-img"
+                src="https://a-static.besthdwallpaper.com/grand-theft-auto-v-online-sunset-panorama-wallpaper-3554x1999-21384_53.jpg"
+                alt="Sunset"
+                onerror="this.src='https://placehold.co/380x214/111/f7c948?text=Sunset'"
+              />
+            </div>
+            <div class="carousel__slide-overlay"></div>
+            <div class="carousel__slide-info">
+              <div class="carousel__slide-tag">// Visual</div>
+              <h3 class="carousel__slide-title">Pôr do Sol em LS</h3>
+              <p class="carousel__slide-desc">Cenários deslumbrantes em cada esquina da cidade.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel__controls">
+        <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">&#8592;</button>
+        <div class="carousel__dots"></div>
+        <button class="carousel__btn carousel__btn--next" aria-label="Próximo">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="brand-name">GTA<span>V</span></div>
+        <p>Grand Theft Auto V e Grand Theft Auto Online — o mundo de Los Santos e Blaine County está esperando por você.</p>
+        <div class="footer__brand-rating">
+          <span>© 2013–2025 Rockstar Games. Todos os direitos reservados.</span>
+        </div>
+      </div>
+
+      <div class="footer__links">
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="#about">O Jogo</a></li>
+          <li><a href="#characters">Personagens</a></li>
+          <li><a href="#gallery">Galeria</a></li>
+          <li><a href="#world">Mundo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links">
+        <h5>Plataformas</h5>
+        <ul>
+          <li><a href="#">PlayStation 5</a></li>
+          <li><a href="#">Xbox Series X|S</a></li>
+          <li><a href="#">PC (Steam)</a></li>
+          <li><a href="#">PlayStation 4</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>Desenvolvido como fan page — não afiliado à Rockstar Games</p>
+      <div class="footer__bottom-links">
+        <a href="#">Privacidade</a>
+        <a href="#">Termos</a>
+        <a href="#">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="dist/js/main.min.js"></script>
+</body>
+</html>

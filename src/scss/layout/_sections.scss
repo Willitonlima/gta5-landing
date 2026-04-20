@@ -1,0 +1,231 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.section {
+  padding: $space-xl $space-md;
+  position: relative;
+  overflow: hidden;
+
+  &__header {
+    text-align: center;
+    margin-bottom: $space-lg;
+  }
+
+  &__divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    &::before, &::after {
+      content: '';
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, $color-yellow);
+    }
+    &::after { background: linear-gradient(90deg, $color-yellow, transparent); }
+
+    span {
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: $color-yellow;
+      font-family: $font-mono;
+    }
+  }
+}
+
+.about {
+  background: $color-surface;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: $space-lg;
+    align-items: center;
+
+    @include respond-to(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__text {
+    p { margin-bottom: 1rem; font-size: 1.05rem; }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  &__stat {
+    background: $color-surface-2;
+    border-left: 3px solid $color-yellow;
+    padding: 1.5rem;
+
+    strong {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      color: $color-yellow;
+      line-height: 1;
+    }
+
+    span {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $color-gray-light;
+    }
+  }
+}
+
+.characters {
+  background: $color-bg;
+  position: relative;
+
+  &::before {
+    content: 'PROTAGONISTAS';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(6rem, 15vw, 14rem);
+    font-weight: 700;
+    color: rgba($color-white, 0.02);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &__grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $space-md;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.gallery {
+  background: $color-surface;
+
+  &__grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 0.75rem;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    cursor: pointer;
+
+    &:first-child {
+      @include respond-to(md) {
+        grid-column: span 2;
+        grid-row: span 2;
+        aspect-ratio: auto;
+      }
+    }
+
+    &::after {
+      content: '';
+      @include absolute-fill;
+      background: linear-gradient(180deg, transparent 50%, rgba($color-bg, 0.9) 100%);
+      opacity: 0;
+      transition: opacity $transition-base;
+    }
+
+    &:hover::after { opacity: 1; }
+    &:hover img { transform: scale(1.06); }
+    &:hover .gallery__label { opacity: 1; transform: translateY(0); }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-slow;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 2;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-yellow;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all $transition-base;
+  }
+}
+
+.world {
+  background: $color-bg;
+  text-align: center;
+
+  &__inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: $space-lg;
+  }
+
+  &__feature {
+    padding: 2rem 1.5rem;
+    background: $color-surface;
+    position: relative;
+    overflow: hidden;
+    transition: transform $transition-base;
+
+    &:hover { transform: translateY(-4px); }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: $color-yellow;
+    }
+
+    &-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      color: $color-white;
+    }
+
+    p { font-size: 0.9rem; }
+  }
+}

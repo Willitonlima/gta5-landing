@@ -1,0 +1,55 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: $font-body;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  transition: all $transition-base;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    @include absolute-fill;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform $transition-base;
+  }
+
+  span { position: relative; z-index: 1; }
+
+  &--primary {
+    background: $color-yellow;
+    color: $color-bg;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+
+    &::before { background: $color-white; }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-glow-yellow;
+      &::before { transform: scaleX(1); }
+    }
+  }
+
+  &--outline {
+    border: 1px solid rgba($color-yellow, 0.5);
+    color: $color-yellow;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+
+    &::before { background: rgba($color-yellow, 0.1); }
+
+    &:hover {
+      border-color: $color-yellow;
+      box-shadow: $shadow-glow-yellow;
+      &::before { transform: scaleX(1); }
+    }
+  }
+}
