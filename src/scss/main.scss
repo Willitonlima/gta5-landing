@@ -1,14 +1,21 @@
+// ==========================================
+// GTA 5 Landing Page - Main SCSS Entry
+// ==========================================
 
+// 1. Variables & Config
 @use 'abstracts/variables' as *;
 @use 'abstracts/mixins' as *;
 
+// 2. Base
 @use 'base/reset';
 @use 'base/typography';
 
+// 3. Layout
 @use 'layout/header';
 @use 'layout/sections';
 @use 'layout/footer';
 
+// 4. Components
 @use 'components/nav';
 @use 'components/buttons';
 @use 'components/carousel';

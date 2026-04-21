@@ -1,3 +1,7 @@
+// ==========================================
+// GTA 5 — Sections
+// ==========================================
+
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
@@ -36,6 +40,8 @@
     }
   }
 }
+
+// ── About ──────────────────────────────────────
 
 .about {
   background: $color-surface;
@@ -84,6 +90,8 @@
   }
 }
 
+// ── Characters ─────────────────────────────────
+
 .characters {
   background: $color-bg;
   position: relative;
@@ -113,6 +121,8 @@
     z-index: 1;
   }
 }
+
+// ── Gallery ────────────────────────────────────
 
 .gallery {
   background: $color-surface;
@@ -179,6 +189,8 @@
     transition: all $transition-base;
   }
 }
+
+// ── World ──────────────────────────────────────
 
 .world {
   background: $color-bg;

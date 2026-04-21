@@ -1,3 +1,7 @@
+// ==========================================
+// GTA 5 — Header
+// ==========================================
+
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
@@ -10,6 +14,7 @@
   @include flex-center;
   flex-direction: column;
 
+  // Dark overlay gradient
   &__bg {
     @include absolute-fill;
     background:
@@ -19,6 +24,7 @@
     z-index: 0;
   }
 
+  // Animated city silhouette via CSS
   &__city {
     @include absolute-fill;
     z-index: 0;
@@ -37,6 +43,7 @@
     }
   }
 
+  // Grid lines effect
   &__grid {
     @include absolute-fill;
     z-index: 0;
@@ -67,13 +74,14 @@
     animation: fadeDown 0.8s 0.2s ease forwards;
   }
 
+  // Central hero image (logo / character)
   &__image-wrap {
     position: relative;
     width: clamp(220px, 40vw, 500px);
     margin: 0 auto;
     opacity: 0;
     animation: fadeUp 1s 0.4s ease forwards;
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -86,7 +94,7 @@
       z-index: -1;
     }
   }
-  
+
   &__hero-img {
     width: 100%;
     height: auto;
@@ -94,6 +102,7 @@
     animation: float 4s ease-in-out infinite;
   }
 
+  // Main title
   &__title {
     font-family: 'Oswald', sans-serif;
     font-size: clamp(3.5rem, 12vw, 10rem);
@@ -142,6 +151,7 @@
     animation: fadeUp 1s 1s ease forwards;
   }
 
+  // Scroll indicator
   &__scroll {
     position: absolute;
     bottom: 2rem;
@@ -172,6 +182,7 @@
   }
 }
 
+// Animations
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-12px); }

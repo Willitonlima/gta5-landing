@@ -1,8 +1,16 @@
+// ==========================================
+// GTA 5 Landing Page — Main JS
+// ==========================================
+
+// ── Nav scroll behavior ─────────────────────────
+
 const nav = document.querySelector('.nav');
 
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
-})
+});
+
+// ── Carousel ────────────────────────────────────
 
 (function initCarousel() {
   const track   = document.querySelector('.carousel__track');
@@ -17,6 +25,7 @@ window.addEventListener('scroll', () => {
   const visible = () => window.innerWidth >= 768 ? 3 : 1;
   const maxIndex = () => slides.length - visible();
 
+  // Build dots
   slides.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.className = 'carousel__dot' + (i === 0 ? ' active' : '');
@@ -43,6 +52,7 @@ window.addEventListener('scroll', () => {
   nextBtn.addEventListener('click', () => goTo(current + 1));
   window.addEventListener('resize', () => goTo(current));
 
+  // Touch/swipe
   let startX = 0;
   track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
   track.addEventListener('touchend', e => {
@@ -51,12 +61,16 @@ window.addEventListener('scroll', () => {
   }, { passive: true });
 
   goTo(0);
+
+  // Auto-play
   let autoPlay = setInterval(() => goTo(current + 1 > maxIndex() ? 0 : current + 1), 4500);
   track.addEventListener('mouseenter', () => clearInterval(autoPlay));
   track.addEventListener('mouseleave', () => {
     autoPlay = setInterval(() => goTo(current + 1 > maxIndex() ? 0 : current + 1), 4500);
   });
 })();
+
+// ── Scroll reveal ───────────────────────────────
 
 (function initReveal() {
   const observer = new IntersectionObserver((entries) => {
@@ -71,6 +85,7 @@ window.addEventListener('scroll', () => {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
 
+// ── Parallax header ─────────────────────────────
 
 (function initParallax() {
   const hero = document.querySelector('.header__image-wrap');
@@ -81,6 +96,8 @@ window.addEventListener('scroll', () => {
     hero.style.transform = `translateY(${y * 0.15}px)`;
   }, { passive: true });
 })();
+
+// ── Cursor glow ─────────────────────────────────
 
 (function initCursor() {
   const glow = document.createElement('div');

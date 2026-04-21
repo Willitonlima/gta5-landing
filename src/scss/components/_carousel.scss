@@ -1,3 +1,7 @@
+// ==========================================
+// GTA 5 — Carousel
+// ==========================================
+
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
@@ -124,6 +128,7 @@
     color: $color-gray-light;
   }
 
+  // Controls
   &__controls {
     @include flex-center;
     gap: 1.5rem;

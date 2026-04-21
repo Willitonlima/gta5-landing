@@ -1,3 +1,7 @@
+// ==========================================
+// GTA 5 — Cards
+// ==========================================
+
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
@@ -70,6 +74,7 @@
     line-height: 1.5;
   }
 
+  // color accents per character
   &--michael {
     .character-card__role { color: #4a90e2; }
     .character-card__glow { background: linear-gradient(0deg, rgba(74,144,226,0.15), transparent); }

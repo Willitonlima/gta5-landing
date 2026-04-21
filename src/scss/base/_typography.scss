@@ -1,7 +1,12 @@
+// ==========================================
+// GTA 5 — Typography
+// ==========================================
+
 @use '../abstracts/variables' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Oswald:wght@200;400;600;700&display=swap');
 
+// Custom Pricedown-like font fallback via CSS
 .font-display  { font-family: $font-display; }
 .font-body     { font-family: $font-body; }
 
